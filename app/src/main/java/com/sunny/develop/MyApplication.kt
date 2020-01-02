@@ -1,6 +1,8 @@
 package com.sunny.develop
 
 import android.app.Application
+import com.orhanobut.logger.AndroidLogAdapter
+import com.orhanobut.logger.Logger
 
 /**
  * Desc 全局管理类
@@ -24,6 +26,9 @@ class MyApplication : Application() {
     override fun onCreate() {
         super.onCreate()
         instance = this
+
+        Logger.addLogAdapter(AndroidLogAdapter())
+
     }
 
     /**
